@@ -1,4 +1,4 @@
-# NYT Chronicle
+# Blogs Dev
 
 A modern, minimalist React application for searching The New York Times articles with a sleek
 black-and-white design.
@@ -55,7 +55,7 @@ black-and-white design.
 
 ## 🎨 Design System
 
-NYT Chronicle uses a carefully crafted monochrome design system:
+Blogs Dev uses a carefully crafted monochrome design system:
 
 - **Colors**: Pure blacks (#000), whites (#fff), and neutral grays
 - **Typography**: Inter font family for clean, readable text
