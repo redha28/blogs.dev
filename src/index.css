@@ -1,0 +1,217 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NYT Chronicle - Modern Black & White Design System */
+
+@layer base {
+  :root {
+    /* Core Monochrome Palette */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    /* Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    /* Primary - Pure Black */
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Light Grays */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+
+    /* Muted - Neutral Grays */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Accent - Subtle Gray */
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 0%;
+
+    /* Interactive States */
+    --hover: 0 0% 92%;
+    --active: 0 0% 88%;
+
+    /* Borders & Inputs */
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: 0 0% 0%;
+
+    /* Design Tokens */
+    --radius: 0.375rem;
+
+    /* Typography Scale */
+    --font-headline: "Inter", system-ui, sans-serif;
+    --font-body: "Inter", system-ui, sans-serif;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    /* Inverted for dark theme - keeping monochrome aesthetic */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+
+    --hover: 0 0% 15%;
+    --active: 0 0% 20%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 10%;
+    --ring: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-headline;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Article Card Styles */
+  .article-card {
+    @apply bg-card border border-border rounded-lg p-6 transition-all duration-200;
+    @apply hover:shadow-md hover:border-primary/20;
+  }
+
+  .article-card-title {
+    @apply text-xl font-semibold text-foreground mb-2 leading-tight;
+    @apply hover:text-primary transition-colors duration-150;
+  }
+
+  .article-meta {
+    @apply text-sm text-muted-foreground mb-3 flex items-center gap-2;
+  }
+
+  .article-snippet {
+    @apply text-foreground/80 leading-relaxed;
+  }
+
+  /* Search Styles */
+  .search-container {
+    @apply relative w-full max-w-2xl mx-auto;
+  }
+
+  .search-input {
+    @apply w-full px-4 py-3 text-lg bg-input border border-border rounded-lg;
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent;
+    @apply placeholder:text-muted-foreground;
+  }
+
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium;
+    @apply hover:bg-primary/90 transition-colors duration-150;
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium;
+    @apply hover:bg-hover transition-colors duration-150;
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  /* Layout Utilities */
+  .container-center {
+    @apply max-w-6xl mx-auto px-6;
+  }
+
+  .content-wrapper {
+    @apply min-h-screen bg-background;
+  }
+
+  /* Loading States */
+  .loading-pulse {
+    @apply animate-pulse bg-muted rounded;
+  }
+
+  /* Typography Utilities */
+  .headline-primary {
+    @apply text-3xl md:text-4xl font-bold text-foreground leading-tight;
+  }
+
+  .headline-secondary {
+    @apply text-xl md:text-2xl font-semibold text-foreground leading-snug;
+  }
+
+  .body-large {
+    @apply text-lg text-foreground/90 leading-relaxed;
+  }
+
+  .body-small {
+    @apply text-sm text-muted-foreground;
+  }
+
+  /* Text Utilities */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
