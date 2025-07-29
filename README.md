@@ -1,6 +1,7 @@
 # NYT Chronicle
 
-A modern, minimalist React application for searching The New York Times articles with a sleek black-and-white design.
+A modern, minimalist React application for searching The New York Times articles with a sleek
+black-and-white design.
 
 ## ✨ Features
 
@@ -32,23 +33,25 @@ A modern, minimalist React application for searching The New York Times articles
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd nyt-chronicle
    ```
 
 2. **Install dependencies**
+
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. **Start the development server**
+
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
-4. **Open your browser**
-   Navigate to `http://localhost:8080` to see the application.
+4. **Open your browser** Navigate to `http://localhost:8080` to see the application.
 
 ## 🎨 Design System
 
@@ -71,16 +74,19 @@ This app integrates with The New York Times Article Search API:
 ## 📱 Key Components
 
 ### `SearchInput`
+
 - Debounced search input (500ms delay)
 - Loading states and clear functionality
 - Auto-submits on Enter key
 
 ### `ArticleCard`
+
 - Displays article metadata (headline, author, date, snippet)
 - Hover animations and responsive design
 - Direct links to full articles
 
 ### `ArticlePage`
+
 - Detailed article view with full metadata
 - Social sharing functionality
 - Responsive image handling
@@ -88,6 +94,7 @@ This app integrates with The New York Times Article Search API:
 ## 🛠️ Development
 
 ### Project Structure
+
 ```
 src/
 ├── components/          # Reusable UI components
@@ -116,24 +123,28 @@ The app uses a comprehensive design system defined in `src/index.css`:
 }
 
 /* Pre-built component classes */
-.btn-primary, .btn-secondary
-.article-card, .search-input
-.headline-primary, .body-large
+.btn-primary,
+.btn-secondary .article-card,
+.search-input .headline-primary,
+.body-large;
 ```
 
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
+
 1. Connect your repository to Vercel
 2. Deploy automatically on every push
 3. Custom domain support available
 
 ### Netlify
+
 1. Build command: `npm run build`
 2. Publish directory: `dist`
 3. Auto-deploy from Git
 
 ### Other Platforms
+
 The app builds to a static `dist/` folder that can be served by any static hosting service.
 
 ## 📄 License
