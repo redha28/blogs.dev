@@ -28,7 +28,7 @@ black-and-white design.
 ### Prerequisites
 
 - Node.js 16.x or later
-- npm or yarn package manager
+- pnpm or yarn package manager
 
 ### Installation
 
@@ -107,10 +107,10 @@ src/
 
 ### Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
+- `pnpm run dev` - Start development server
+- `pnpm run build` - Build for production
+- `pnpm run preview` - Preview production build
+- `pnpm run lint` - Run ESLint
 
 ### Design System Usage
 
@@ -139,7 +139,7 @@ The app uses a comprehensive design system defined in `src/index.css`:
 
 ### Netlify
 
-1. Build command: `npm run build`
+1. Build command: `pnpm run build`
 2. Publish directory: `dist`
 3. Auto-deploy from Git
 
